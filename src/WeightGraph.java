@@ -77,4 +77,8 @@ public class WeightGraph <Vertex> {
         }
         return map.get(vertex);
     }
+
+    public Vertex[] adjacencyList(Vertex currentNode) {
+        return null;
+    }
 }
