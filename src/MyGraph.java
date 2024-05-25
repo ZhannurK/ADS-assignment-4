@@ -16,22 +16,23 @@ public class MyGraph<Vertex> {
     }
 
     public void addVertex(Vertex vertex) {
-        map.put(vertex, new ArrayList<>());
+        if (!map.containsKey(vertex)) {
+            map.put(vertex, new ArrayList<>());
+        }
     }
 
     public void addEdge(Vertex source, Vertex destination) {
-        if (hasVertex(source)) {
+        if (!hasVertex(source)) {
             addVertex(source);
         }
-        if (hasVertex(destination)) {
+        if (!hasVertex(destination)) {
             addVertex(destination);
         }
-        if(hasEdge(source, destination)) {
-            addEdge(source, destination);
-        }
-        map.get(source).add(destination);
-        if (undirected) {
-            map.get(destination).add(source);
+        if (!hasEdge(source, destination)) {
+            map.get(source).add(destination);
+            if (undirected) {
+                map.get(destination).add(source);
+            }
         }
     }
 
@@ -45,24 +46,24 @@ public class MyGraph<Vertex> {
             count += vertexList.size();
         }
         if (undirected) {
-            count = count / 2;
+            count /= 2;
         }
         return count;
     }
 
     public boolean hasVertex(Vertex vertex) {
-        return !map.containsKey(vertex);
+        return map.containsKey(vertex);
     }
 
     public boolean hasEdge(Vertex source, Vertex destination) {
-        if (hasVertex(source)) {
+        if (!hasVertex(source)) {
             return false;
         }
         return map.get(source).contains(destination);
     }
 
     public Iterable<Vertex> adjacencyList(Vertex source) {
-        if (hasVertex(source)) {
+        if (!hasVertex(source)) {
             return null;
         }
         return map.get(source);

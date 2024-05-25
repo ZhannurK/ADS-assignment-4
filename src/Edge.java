@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Edge <Vertex> {
     private Vertex source;
     private Vertex destination;
@@ -31,5 +33,17 @@ public class Edge <Vertex> {
 
     public void setWeight(Double weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; // references compared
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Edge<?> otherEdge = (Edge<?>) o;
+
+        return Objects.equals(this.source, otherEdge.source) &&
+                Objects.equals(this.destination, otherEdge.destination);
     }
 }

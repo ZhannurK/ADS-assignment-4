@@ -1,22 +1,27 @@
+import java.util.HashMap;
 import java.util.Map;
 
-public class Vertex <V> {
-    private V data;
-    private Map<Vertex<V>, Double> adjacencyList;
+public class Vertex<V> {
+    private final V data;
+    private final Map<Vertex<V>, Double> adjacentVertices = new HashMap<>();
 
-    public void setAdjacencyList(Vertex<V> destination, double weight) {
-        adjacencyList.put(destination, weight);
+    public Vertex(V data) {
+        this.data = data;
     }
 
-    public double getAdjacency(Vertex<V> destination) {
-        return adjacencyList.get(destination);
+    public void addAdjacentVertex(Vertex<V> destination, double weight) {
+        adjacentVertices.put(destination, weight);
+    }
+
+    public Map<Vertex<V>, Double> getAdjacentVertices() {
+        return adjacentVertices;
     }
 
     public V getData() {
         return data;
     }
 
-    public void setData(V data) {
-        this.data = data;
+    public String toString() {
+        return data.toString();
     }
 }
