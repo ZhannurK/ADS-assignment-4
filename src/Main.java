@@ -12,12 +12,24 @@ public class Main {
         BreadthFirstSearch<String> bfs = new BreadthFirstSearch<>(a);
         DijkstraSearch<String> dijkstra = new DijkstraSearch<>(a);
 
-        for (Vertex<String> v : bfs.pathTo(c)) {
-            System.out.println(v.getData());
+        // Check and print BFS path
+        Iterable<Vertex<String>> bfsPath = bfs.pathTo(c);
+        if (bfsPath != null) {
+            for (Vertex<String> v : bfsPath) {
+                System.out.println(v.getData());
+            }
+        } else {
+            System.out.println("No path found (BFS) from A to C");
         }
 
-        for (Vertex<String> v : dijkstra.pathTo(c)) {
-            System.out.println(v.getData());
+        // Check and print Dijkstra's path
+        Iterable<Vertex<String>> dijkstraPath = dijkstra.pathTo(c);
+        if (dijkstraPath != null) {
+            for (Vertex<String> v : dijkstraPath) {
+                System.out.println(v.getData());
+            }
+        } else {
+            System.out.println("No path found (Dijkstra) from A to C");
         }
     }
 }
