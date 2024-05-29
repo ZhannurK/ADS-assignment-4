@@ -6,13 +6,6 @@ public class Main {
         Vertex<String> brazil = new Vertex<>("Brazil");
         Vertex<String> kazakhstan = new Vertex<>("Kazakhstan");
 
-        WeightedGraph<String> graph = new WeightedGraph<>();
-        graph.addVertex(usa);
-        graph.addVertex(canada);
-        graph.addVertex(mexico);
-        graph.addVertex(brazil);
-        graph.addVertex(kazakhstan);
-
         usa.addAdjacentVertex(canada, 5.0);
         usa.addAdjacentVertex(mexico, 10.0);
         canada.addAdjacentVertex(mexico, 3.0);
