@@ -25,9 +25,11 @@ public class DijkstraSearch<V> extends Search<V> {
         if (distTo.getOrDefault(w, Double.POSITIVE_INFINITY) > distThroughV) {
             distTo.put(w, distThroughV);
             edgeTo.put(w, v);
+            pq.remove(w);
             pq.add(w);
         }
     }
+
 
     @Override
     public Iterable<Vertex<V>> pathTo(Vertex<V> v) {
