@@ -27,8 +27,8 @@ public class DijkstraSearch<V> extends Search<V> {
         if (distTo.getOrDefault(w, Double.POSITIVE_INFINITY) > distThroughV) {
             distTo.put(w, distThroughV);
             edgeTo.put(w, v);
-            pq.remove(w); // Remove the old entry if it exists
-            pq.add(w); // Add the updated entry
+            pq.remove(w);
+            pq.add(w);
         }
     }
 
