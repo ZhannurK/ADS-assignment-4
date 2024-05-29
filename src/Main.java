@@ -13,11 +13,11 @@ public class Main {
         graph.addVertex(brazil);
         graph.addVertex(kazakhstan);
 
-        usa.addAdjacentVertex(canada, 1.0);
-        usa.addAdjacentVertex(mexico, 3.0);
-        canada.addAdjacentVertex(mexico, 1.5);
-        mexico.addAdjacentVertex(brazil, 4.0);
-        brazil.addAdjacentVertex(kazakhstan, 2.0);
+        usa.addAdjacentVertex(canada, 5.0);
+        usa.addAdjacentVertex(mexico, 10.0);
+        canada.addAdjacentVertex(mexico, 3.0);
+        mexico.addAdjacentVertex(brazil, 6.0);
+        brazil.addAdjacentVertex(kazakhstan, 4.0);
 
         BreadthFirstSearch<String> bfs = new BreadthFirstSearch<>(usa);
         System.out.println("BFS path from Kazakhstan to USA:");
