@@ -27,7 +27,7 @@ public class BreadthFirstSearch<V> extends Search<V> {
 
     @Override
     public Iterable<Vertex<V>> pathTo(Vertex<V> v) {
-        if (!hasPathTo(v)) return null;
+        if (!hasPathTo(v))return null;
         Stack<Vertex<V>> path = new Stack<>();
         for (Vertex<V> x = v; x != source; x = edgeTo.get(x)) {
             path.push(x);
