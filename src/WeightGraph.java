@@ -25,8 +25,4 @@ class WeightedGraph<V> {
             vertices.get(to).put(from, weight);
         }
     }
-
-    public Map<Vertex<V>, Map<Vertex<V>, Double>> getVertices() {
-        return vertices;
-    }
 }
