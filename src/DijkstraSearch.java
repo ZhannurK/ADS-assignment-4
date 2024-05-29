@@ -13,23 +13,24 @@ public class DijkstraSearch<V> extends Search<V> {
 
         while (!pq.isEmpty()) {
             Vertex<V> v = pq.poll();
-            for (Vertex<V> w : v.getAdjacentVertices().keySet()) {
-                relax(v, w);
+            visited.add(v);
+            for (Map.Entry<Vertex<V>, Double> entry : v.getAdjacentVertices().entrySet()) {
+                Vertex<V> w = entry.getKey();
+                double weight = entry.getValue();
+                relax(v, w, weight);
             }
         }
     }
 
-    private void relax(Vertex<V> v, Vertex<V> w) {
-        double weight = v.getAdjacentVertices().get(w);
+    private void relax(Vertex<V> v, Vertex<V> w, double weight) {
         double distThroughV = distTo.get(v) + weight;
         if (distTo.getOrDefault(w, Double.POSITIVE_INFINITY) > distThroughV) {
             distTo.put(w, distThroughV);
             edgeTo.put(w, v);
-            pq.remove(w);
-            pq.add(w);
+            pq.remove(w); // Remove the old entry if it exists
+            pq.add(w); // Add the updated entry
         }
     }
-
 
     @Override
     public Iterable<Vertex<V>> pathTo(Vertex<V> v) {

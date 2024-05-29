@@ -22,7 +22,11 @@ class WeightedGraph<V> {
         }
         vertices.get(from).put(to, weight);
         if (undirected) {
-            vertices.get(to).put(from, weight);  // This line mirrors the edge for undirected graphs
+            vertices.get(to).put(from, weight);
         }
+    }
+
+    public Map<Vertex<V>, Map<Vertex<V>, Double>> getVertices() {
+        return vertices;
     }
 }
