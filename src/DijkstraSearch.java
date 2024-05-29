@@ -24,7 +24,7 @@ public class DijkstraSearch<V> extends Search<V> {
         double distThroughV = distTo.get(v) + weight;
         if (distTo.getOrDefault(w, Double.POSITIVE_INFINITY) > distThroughV) {
             distTo.put(w, distThroughV);
-            edgeTo.put(w, v);  // Save the path information
+            edgeTo.put(w, v);
             pq.add(w);
         }
     }
