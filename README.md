@@ -21,12 +21,8 @@ Include the Java files in your project's source directory.
 ## Usage
 Here’s a quick example of how to create a graph, add vertices and edges, and perform a search:
 
-java
-Copy code
-// Create a new weighted graph
 WeightedGraph<String> graph = new WeightedGraph<>();
 
-// Adding vertices
 Vertex<String> a = new Vertex<>("A");
 Vertex<String> b = new Vertex<>("B");
 Vertex<String> c = new Vertex<>("C");
@@ -35,15 +31,12 @@ graph.addVertex(a);
 graph.addVertex(b);
 graph.addVertex(c);
 
-// Adding edges with weights
 graph.addEdge(a, b, 1.0);
 graph.addEdge(b, c, 2.0);
 graph.addEdge(c, a, 3.0);
 
-// Perform Dijkstra's algorithm from vertex A
 DijkstraSearch<String> search = new DijkstraSearch<>(a);
 
-// Retrieve and print the shortest path to vertex C
 Iterable<Vertex<String>> path = search.pathTo(c);
 if (path != null) {
     path.forEach(vertex -> System.out.print(vertex + " "));
