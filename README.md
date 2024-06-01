@@ -19,22 +19,22 @@ Copy code
 git clone https://github.com/ZhannurK/ADS-assignment-4.git
 Include the Java files in your project's source directory.
 ## Usage
-WeightedGraph<String> graph = new WeightedGraph<>();
+WeightedGraph<String> graph = new WeightedGraph<>();<br>
 
-Vertex<String> a = new Vertex<>("A");
-Vertex<String> b = new Vertex<>("B");
-Vertex<String> c = new Vertex<>("C");
+Vertex<String> a = new Vertex<>("A");<br>
+Vertex<String> b = new Vertex<>("B");<br>
+Vertex<String> c = new Vertex<>("C");<br>
 
-graph.addEdge(a, b, 1.0);
-graph.addEdge(b, c, 2.0);
-graph.addEdge(c, a, 3.0);
+graph.addEdge(a, b, 1.0);<br>
+graph.addEdge(b, c, 2.0);<br>
+graph.addEdge(c, a, 3.0);<br>
 
-DijkstraSearch<String> search = new DijkstraSearch<>(a);
+DijkstraSearch<String> search = new DijkstraSearch<>(a);<br>
 
-Iterable<Vertex<String>> path = search.pathTo(c);
-if (path != null) {
-    path.forEach(vertex -> System.out.print(vertex + " "));
-}
+Iterable<Vertex<String>> path = search.pathTo(c);<br>
+if (path != null) {<br>
+    path.forEach(vertex -> System.out.print(vertex + " "));<br>
+}<br>
 
 ## Contributing
 Contributions are welcome! Please feel free to submit pull requests, create issues, or suggest improvements.
