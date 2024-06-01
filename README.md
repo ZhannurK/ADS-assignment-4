@@ -19,17 +19,11 @@ Copy code
 git clone https://github.com/your-username/your-repository-name.git
 Include the Java files in your project's source directory.
 ## Usage
-Here’s a quick example of how to create a graph, add vertices and edges, and perform a search:
-
 WeightedGraph<String> graph = new WeightedGraph<>();
 
 Vertex<String> a = new Vertex<>("A");
 Vertex<String> b = new Vertex<>("B");
 Vertex<String> c = new Vertex<>("C");
-
-graph.addVertex(a);
-graph.addVertex(b);
-graph.addVertex(c);
 
 graph.addEdge(a, b, 1.0);
 graph.addEdge(b, c, 2.0);
@@ -41,6 +35,7 @@ Iterable<Vertex<String>> path = search.pathTo(c);
 if (path != null) {
     path.forEach(vertex -> System.out.print(vertex + " "));
 }
+
 ## Contributing
 Contributions are welcome! Please feel free to submit pull requests, create issues, or suggest improvements.
 
