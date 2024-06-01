@@ -16,7 +16,7 @@ Java 11 or higher
 Clone the repository:
 bash
 Copy code
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/ZhannurK/ADS-assignment-4.git
 Include the Java files in your project's source directory.
 ## Usage
 WeightedGraph<String> graph = new WeightedGraph<>();
